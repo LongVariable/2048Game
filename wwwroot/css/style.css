@@ -6,23 +6,22 @@
     padding: 0;
     height: 100vh;
     display: flex;
-    justify-content: center; /* celá aplikace horizontálně uprostřed */
-    align-items: center; /* celá aplikace vertikálně uprostřed */
+    justify-content: center;
+    align-items: center; 
 }
 
 .game-layout {
     display: flex;
-    justify-content: space-between; /* levý vlevo, pravý vpravo */
-    align-items: center; /* board vertikálně uprostřed */
+    justify-content: space-between;
+    align-items: center;
     width: 900px;
     gap: 40px;
 }
 
-/* Levý panel */
 .sidebar {
     display: flex;
     flex-direction: column;
-    align-items: flex-start; /* zarovnání vlevo */
+    align-items: flex-start;
     gap: 15px;
     min-width: 180px;
 }
@@ -57,7 +56,6 @@
     user-select: none;
 }
 
-/* Ovládací šipky */
 .controls {
     display: flex;
     flex-direction: column;
@@ -67,20 +65,16 @@
     width: 100%;
 }
 
-/* šipka nahoru */
 .arrow-up {
     margin-bottom: 5px;
 }
 
-/* řada šipek dole */
 .arrow-middle {
     display: flex;
     gap: 15px;
 }
-
-/* tlačítka šipek - jako score box, ale větší a klikací */
 .arrow-btn {
-    background: #bbada0; /* stejná barva jako score-box */
+    background: #bbada0;
     color: #f9f6f2;
     border: none;
     border-radius: 6px;
@@ -103,7 +97,6 @@
         transform: translateY(3px);
     }
 
-/* Pravý panel – board */
 .board-container {
     display: flex;
     justify-content: center;
@@ -135,9 +128,6 @@
     color: #776e65;
     transition: all 0.2s ease-in-out;
 }
-
-/* další tile barvy atd. zůstávají beze změny */
-
 
 .tile-0 {
     background: #cdc1b4;
@@ -201,26 +191,26 @@
 
 @media (max-width: 600px) {
     body {
-        height: auto; /* nemusí být 100vh, lépe scrollovat */
+        height: auto; 
         padding: 10px;
     }
 
     .game-layout {
-        flex-direction: column; /* sloupec místo řádku */
-        width: 100%; /* využít celou šířku */
+        flex-direction: column; 
+        width: 100%; 
         gap: 20px;
-        align-items: center; /* vycentrovat */
+        align-items: center; 
     }
 
     .sidebar {
         min-width: auto;
         width: 100%;
-        align-items: center; /* zarovnat na střed */
+        align-items: center; 
         gap: 10px;
     }
 
         .sidebar h1 {
-            font-size: 48px; /* menší nadpis */
+            font-size: 48px; 
             text-align: center;
         }
 
@@ -238,7 +228,7 @@
 
     .controls {
         width: 100%;
-        flex-direction: row; /* šipky do řádku */
+        flex-direction: row; 
         justify-content: center;
         gap: 10px;
         margin-top: 20px;
@@ -246,7 +236,7 @@
 
     .arrow-up {
         margin-bottom: 0;
-        order: -1; /* posunout nahoru v řádku */
+        order: -1; 
     }
 
     .arrow-middle {
