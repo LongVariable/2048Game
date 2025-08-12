@@ -1,0 +1,278 @@
+﻿body {
+    font-family: "Clear Sans", "Helvetica Neue", Arial, sans-serif;
+    background: #faf8ef;
+    color: #776e65;
+    margin: 0;
+    padding: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center; /* celá aplikace horizontálně uprostřed */
+    align-items: center; /* celá aplikace vertikálně uprostřed */
+}
+
+.game-layout {
+    display: flex;
+    justify-content: space-between; /* levý vlevo, pravý vpravo */
+    align-items: center; /* board vertikálně uprostřed */
+    width: 900px;
+    gap: 40px;
+}
+
+/* Levý panel */
+.sidebar {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start; /* zarovnání vlevo */
+    gap: 15px;
+    min-width: 180px;
+}
+
+    .sidebar h1 {
+        font-size: 72px;
+        color: #776e65;
+        margin: 0;
+
+        font-weight: 900;
+    }
+
+.subtitle {
+    font-size: 18px;
+    color: #a3937d;
+    margin-top: -8px;
+    margin-bottom: 20px;
+    font-style: italic;
+    user-select: none;
+}
+
+.score-box {
+    background: #bbada0;
+    color: #f9f6f2;
+    padding: 15px 30px;
+    border-radius: 6px;
+    text-align: center;
+    width: 100%;
+    font-weight: bold;
+    font-size: 24px;
+    box-shadow: inset 0 -3px 0 #9e8c78;
+    user-select: none;
+}
+
+/* Ovládací šipky */
+.controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 15px;
+    margin-top: 30px;
+    width: 100%;
+}
+
+/* šipka nahoru */
+.arrow-up {
+    margin-bottom: 5px;
+}
+
+/* řada šipek dole */
+.arrow-middle {
+    display: flex;
+    gap: 15px;
+}
+
+/* tlačítka šipek - jako score box, ale větší a klikací */
+.arrow-btn {
+    background: #bbada0; /* stejná barva jako score-box */
+    color: #f9f6f2;
+    border: none;
+    border-radius: 6px;
+    padding: 0;
+    font-size: 28px;
+    cursor: pointer;
+    width: 70px;
+    height: 70px;
+    font-weight: 900;
+    box-shadow: 0 5px 0 #9e8c78;
+    transition: background-color 0.3s, box-shadow 0.2s;
+    user-select: none;
+    appearance: none;
+    -webkit-appearance: none;
+}
+
+    .arrow-btn:hover {
+        background: #d1c4b8;
+        box-shadow: 0 2px 0 #9e8c78;
+        transform: translateY(3px);
+    }
+
+/* Pravý panel – board */
+.board-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.grid {
+    background: #bbada0;
+    padding: 10px;
+    border-radius: 6px;
+    display: inline-block;
+}
+
+.grid-row {
+    display: flex;
+}
+
+.tile {
+    width: 80px;
+    height: 80px;
+    margin: 5px;
+    background: #cdc1b4;
+    border-radius: 4px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 28px;
+    font-weight: bold;
+    color: #776e65;
+    transition: all 0.2s ease-in-out;
+}
+
+/* další tile barvy atd. zůstávají beze změny */
+
+
+.tile-0 {
+    background: #cdc1b4;
+}
+
+.tile-2 {
+    background: #eee4da;
+    color: #776e65;
+}
+
+.tile-4 {
+    background: #ede0c8;
+    color: #776e65;
+}
+
+.tile-8 {
+    background: #f2b179;
+    color: white;
+}
+
+.tile-16 {
+    background: #f59563;
+    color: white;
+}
+
+.tile-32 {
+    background: #f67c5f;
+    color: white;
+}
+
+.tile-64 {
+    background: #f65e3b;
+    color: white;
+}
+
+.tile-128 {
+    background: #edcf72;
+    color: white;
+}
+
+.tile-256 {
+    background: #edcc61;
+    color: white;
+}
+
+.tile-512 {
+    background: #edc850;
+    color: white;
+}
+
+.tile-1024 {
+    background: #edc53f;
+    color: white;
+}
+
+.tile-2048 {
+    background: #edc22e;
+    color: white;
+}
+
+
+@media (max-width: 600px) {
+    body {
+        height: auto; /* nemusí být 100vh, lépe scrollovat */
+        padding: 10px;
+    }
+
+    .game-layout {
+        flex-direction: column; /* sloupec místo řádku */
+        width: 100%; /* využít celou šířku */
+        gap: 20px;
+        align-items: center; /* vycentrovat */
+    }
+
+    .sidebar {
+        min-width: auto;
+        width: 100%;
+        align-items: center; /* zarovnat na střed */
+        gap: 10px;
+    }
+
+        .sidebar h1 {
+            font-size: 48px; /* menší nadpis */
+            text-align: center;
+        }
+
+    .subtitle {
+        font-size: 16px;
+        margin-top: -5px;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+
+    .score-box {
+        font-size: 20px;
+        padding: 12px 20px;
+    }
+
+    .controls {
+        width: 100%;
+        flex-direction: row; /* šipky do řádku */
+        justify-content: center;
+        gap: 10px;
+        margin-top: 20px;
+    }
+
+    .arrow-up {
+        margin-bottom: 0;
+        order: -1; /* posunout nahoru v řádku */
+    }
+
+    .arrow-middle {
+        gap: 10px;
+    }
+
+    .arrow-btn {
+        width: 50px;
+        height: 50px;
+        font-size: 20px;
+    }
+
+    .board-container {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+    }
+
+    .grid {
+        padding: 5px;
+    }
+
+    .tile {
+        width: 50px;
+        height: 50px;
+        margin: 3px;
+        font-size: 18px;
+    }
+}
